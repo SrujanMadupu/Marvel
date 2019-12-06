@@ -30,9 +30,7 @@ stages {
     }
 }
 post{
-    always{
-    
-    }
+
 }
 
 }
