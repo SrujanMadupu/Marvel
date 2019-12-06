@@ -15,7 +15,7 @@ stages {
     stage('testing'){
         steps{
             sh '''
-            python3 ironman/test_ironman.py --junitxml='test-reports/iron.xml'
+            #python3 ironman/test_ironman.py --junitxml='iron.xml'
             '''
         }
     }
@@ -31,7 +31,7 @@ stages {
 }
 post{
     always{
-        junit 'test-reports/*.xml'
+        #junit 'iron.xml'
     }
 }
 
