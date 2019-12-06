@@ -5,9 +5,9 @@ stages {
     stage('envsetup'){
         steps{
             sh '''#!/bin/bash
-            which python
-            python -m venv tempenv
-            source tempenv/bin/activate
+            which python3
+            python3 -m venv tempenv
+            source /home/abhilash/Desktop/Avenger/tempenv/bin/activate
             pip3 install -r requirements.txt
             '''
         }
@@ -15,7 +15,7 @@ stages {
     stage('runapp'){
         steps{
             sh '''
-            python manage.py runserver 
+            python3 manage.py runserver 
             '''
         }
     }
