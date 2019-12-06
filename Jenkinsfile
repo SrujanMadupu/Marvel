@@ -12,12 +12,24 @@ stages {
             '''
         }
     }
+    stage('testing'){
+        steps{
+            sh '''
+            python3 ironman/test_ironman.py
+            '''
+        }
+    }
     stage('runapp'){
         steps{
             sh '''
             python3 manage.py runserver 
             '''
         }
+    }
+}
+post{
+    always{
+        junit 'test-reports/*.xml'
     }
 }
 
