@@ -5,10 +5,10 @@ stages {
     stage('envsetup'){
         steps{
             sh '''#!/bin/bash
-            which python3
-            python3 -m venv tempenv
+            which python3.8
+            python3.8 -m venv tempenv
             source /home/abhilash/Desktop/Avenger/tempenv/bin/activate
-            pip3 install -r requirements.txt
+            pip3.8 install -r requirements.txt
             '''
         }
     }
