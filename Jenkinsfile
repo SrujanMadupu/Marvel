@@ -15,7 +15,7 @@ stages {
     stage('testing'){
         steps{
             sh '''
-            py.test ironman/test_ironman.py
+            python3 ironman/test_ironman.py
             '''
         }
     }
