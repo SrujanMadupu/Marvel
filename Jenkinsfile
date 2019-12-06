@@ -5,17 +5,17 @@ stages {
     stage('envsetup'){
         steps{
             sh '''#!/bin/bash
-            which python3.8
-            python3.8 -m venv tempenv
-            source /home/abhilash/Desktop/Avenger/tempenv/bin/activate
-            pip3.8 install -r requirements.txt
+            which python3
+            #python3 -m venv tempenv
+            source /home/abhilash/Desktop/Avenger/marvel/bin/activate
+            pip3 install -r requirements.txt
             '''
         }
     }
     stage('testing'){
         steps{
             sh '''
-            py.test ironman/test_ironman.py --junitxml='test_reports.xml'
+            py.test ironman/test_ironman.py
             '''
         }
     }
