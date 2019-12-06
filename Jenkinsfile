@@ -19,10 +19,12 @@ stages {
             '''
         }
     }
-    stage('runapp'){
+    stage('email-notification'){
         steps{
             sh '''
-            python3 manage.py runserver 
+             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+             recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+             subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
             '''
         }
     }
