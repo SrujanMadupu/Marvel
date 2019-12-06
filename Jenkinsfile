@@ -15,7 +15,7 @@ stages {
     stage('testing'){
         steps{
             sh '''
-            python3 ironman/test_ironman.py
+            py.test ironman/test_ironman.py --junitxml='test-reports/iron.xml'
             '''
         }
     }
