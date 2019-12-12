@@ -12,13 +12,6 @@ stages {
             '''
         }
     }
-    stage('testing'){
-        steps{
-            sh '''
-            #python3 ironman/test_ironman.py --junitxml='iron.xml'
-            '''
-        }
-    }
     stage('email-notification'){
         steps{
             sh '''
